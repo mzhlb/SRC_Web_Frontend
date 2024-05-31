@@ -37,20 +37,20 @@ const Games: React.FC = () => {
 
   return (
     <div>
-      <h2>Games</h2>
-      <ul>
+      <ul className="mb-4">
         {games.map((game) => (
-          <li key={game.id}>{game.name}</li>
+          <li key={game.id} className="bg-white p-2 rounded shadow-sm mb-2 text-blue-700">{game.name}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex space-x-2">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="New Game Name"
+          className="flex-1 p-2 border rounded bg-blue-50 text-blue-700"
         />
-        <button type="submit">Create Game</button>
+        <button type="submit" className="p-2 bg-blue-500 text-white rounded">Create</button>
       </form>
     </div>
   );

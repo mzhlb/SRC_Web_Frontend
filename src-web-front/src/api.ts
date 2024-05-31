@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api/', // Proxy will handle the rest
+  baseURL: 'http://localhost:8000/card_def/api', // Replace with your backend's address
 });
 
 export const getGames = () => api.get('games/');

@@ -58,21 +58,21 @@ const Cards: React.FC = () => {
 
   return (
     <div>
-      <h2>Cards</h2>
-      <ul>
+      <ul className="mb-4">
         {cards.map((card) => (
-          <li key={card.id}>
-            {card.name} - {card.description}
+          <li key={card.id} className="bg-white p-2 rounded shadow-sm mb-2 text-blue-700">
+            <strong>{card.name}</strong> - {card.description}
           </li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="space-y-2">
         <input
           type="text"
           name="name"
           value={cardData.name}
           onChange={handleChange}
           placeholder="Card Name"
+          className="w-full p-2 border rounded bg-blue-50 text-blue-700"
         />
         <input
           type="text"
@@ -80,6 +80,7 @@ const Cards: React.FC = () => {
           value={cardData.description}
           onChange={handleChange}
           placeholder="Description"
+          className="w-full p-2 border rounded bg-blue-50 text-blue-700"
         />
         <input
           type="text"
@@ -87,6 +88,7 @@ const Cards: React.FC = () => {
           value={cardData.ability_type}
           onChange={handleChange}
           placeholder="Ability Type"
+          className="w-full p-2 border rounded bg-blue-50 text-blue-700"
         />
         <input
           type="number"
@@ -94,6 +96,7 @@ const Cards: React.FC = () => {
           value={cardData.ability_value}
           onChange={handleChange}
           placeholder="Ability Value"
+          className="w-full p-2 border rounded bg-blue-50 text-blue-700"
         />
         <input
           type="number"
@@ -101,8 +104,9 @@ const Cards: React.FC = () => {
           value={cardData.game}
           onChange={handleChange}
           placeholder="Game ID"
+          className="w-full p-2 border rounded bg-blue-50 text-blue-700"
         />
-        <button type="submit">Create Card</button>
+        <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded">Create</button>
       </form>
     </div>
   );
